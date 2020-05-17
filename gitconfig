@@ -1,3 +1,5 @@
 [user]
 	email = axiezai@gmail.com
 	name = Xihe Xie
+[core]
+	editor = vim
