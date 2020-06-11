@@ -48,3 +48,8 @@ export PATH=/Applications/MATLAB_R2020a.app/bin/:$PATH
 
 # TheFuck
 eval $(thefuck --alias)
+
+# Aliass:
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi

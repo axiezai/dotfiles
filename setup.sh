@@ -3,7 +3,7 @@
 # variables:
 dir=~/dotfiles # dot files directory
 olddir=~/dotfiles_old # backup dot files directory
-files="bash_profile tmux.conf vimrc vim ssh/config gitconfig" # list of symlinks
+files="bash_aliases bash_profile tmux.conf vimrc vim ssh/config gitconfig" # list of symlinks
 
 # create backup
 echo "Creating $olddir for backup of existing dotfiles in ~"
