@@ -1,19 +1,3 @@
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/xxie/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/xxie/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/xxie/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/xxie/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # <<< bash-git-prompt initialize >>>
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
@@ -53,3 +37,19 @@ eval $(thefuck --alias)
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/xxie/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/xxie/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/xxie/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/xxie/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
