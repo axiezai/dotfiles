@@ -3,3 +3,4 @@
 	name = Xihe Xie
 [core]
 	editor = vim
+	excludesfile = /Users/xxie/.gitignore_global
