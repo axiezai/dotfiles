@@ -22,3 +22,6 @@ alias gs='git status'
 alias ga='git add -A'
 alias jlab='jupyter lab'
 alias jnb='jupyter notebook' 
+
+#matlab
+alias mnn='matlab -nosplash -nodesktop'
