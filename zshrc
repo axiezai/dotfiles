@@ -138,3 +138,4 @@ eval $(thefuck --alias)
 # spectrome
 export PYTHONPATH=$PYTHONPATH:~/lab/spectrome
 eval "$(rbenv init -)"
+export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
