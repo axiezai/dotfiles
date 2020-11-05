@@ -134,3 +134,7 @@ export PATH=/Applications/MATLAB_R2020a.app/bin/:$PATH
 
 # thefuck Setup
 eval $(thefuck --alias)
+
+# spectrome
+export PYTHONPATH=$PYTHONPATH:~/lab/spectrome
+eval "$(rbenv init -)"
