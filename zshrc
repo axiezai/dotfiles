@@ -137,5 +137,10 @@ eval $(thefuck --alias)
 
 # spectrome
 export PYTHONPATH=$PYTHONPATH:~/lab/spectrome
+
+# ruby
 eval "$(rbenv init -)"
 export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+
+# remove duplicates
+PATH=$(echo $PATH | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
