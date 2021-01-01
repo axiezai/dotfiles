@@ -100,3 +100,6 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" Use fzf in Vim
+set rtp+=/usr/local/opt/fzf

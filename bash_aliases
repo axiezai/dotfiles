@@ -8,6 +8,8 @@ alias dc='cd'
 # enable color support: 
 alias ls='ls -G'
 
+# Copy personal zoom link:
+alias zl='echo "https://weillcornell.zoom.us/my/axiezai" | pbcopy'
 
 # ls aliases:
 alias ll='ls -lahF'

@@ -97,6 +97,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Save typing:
+alias v="vim"
+
+# Overwrite for better defautls:
+alias mv="mv -i"
+alias mkdir="mkdir -p"
+alias df="df -h"
 
 # Lab things:
 # >>> conda initialize >>>
@@ -144,3 +151,11 @@ export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 
 # remove duplicates
 PATH=$(echo $PATH | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
+
+# extend vim-mode to zsh
+bindkey -v
+
+# Vim as default editor
+export EDITOR=vim
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
