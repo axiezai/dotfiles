@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode python docker tmux gitignore)
+plugins=(git vscode python docker tmux gitignore zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Save typing:
 alias v="vim"
+alias zl="echo "https://weillcornell.zoom.us/my/axiezai" | pbcopy"
 
 # Overwrite for better defautls:
 alias mv="mv -i"
