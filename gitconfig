@@ -5,4 +5,4 @@
 	editor = vim
 	excludesfile = /Users/xxie/.gitignore_global
 [alias]
-	graph = git log --all --graph --decorate --oneline
+	graph = log --all --graph --decorate --oneline
