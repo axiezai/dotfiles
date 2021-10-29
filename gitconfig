@@ -5,4 +5,6 @@
 	editor = vim
 	excludesfile = /Users/xxie/.gitignore_global
 [alias]
-	graph = log --all --graph --decorate --oneline
+	graph = log --all --graph --decorate --oneline --pretty
+[init]
+	defaultBranch = main
