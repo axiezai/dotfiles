@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # Save typing:
 alias v="vim"
 alias zl="echo "https://weillcornell.zoom.us/my/axiezai" | pbcopy"
+alias bfg="java -jar bfg-1.14.0.jar"
 
 # Overwrite for better defautls:
 alias mv="mv -i"
