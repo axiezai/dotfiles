@@ -107,52 +107,12 @@ alias mv="mv -i"
 alias mkdir="mkdir -p"
 alias df="df -h"
 
-# Lab things:
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/xxie/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/xxie/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/xxie/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/xxie/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# <<< FREESURFER >>>
-export FREESURFER_HOME=/Applications/freesurfer
-source $FREESURFER_HOME/SetUpFreeSurfer.sh
-
-
-# FSL Setup
-FSLDIR=/usr/local/fsl
-PATH=${FSLDIR}/bin:${PATH}
-export FSLDIR PATH
-. ${FSLDIR}/etc/fslconf/fsl.sh
-
-# ANTs Setup
-export ANTSPATH=~/ANTs_install/bin/
-export PATH=${ANTSPATH}:$PATH
-
-# MATLAB path
-export PATH=/Applications/MATLAB_R2020a.app/bin/:$PATH
-
 # thefuck Setup
 eval $(thefuck --alias)
-
-# spectrome
-export PYTHONPATH=$PYTHONPATH:~/lab/spectrome
 
 # ruby
 eval "$(rbenv init -)"
 export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
-
-# remove duplicates
-PATH=$(echo $PATH | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
 
 # extend vim-mode to zsh
 bindkey -v
