@@ -140,6 +140,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
+# iterm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# visual studio code command
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
