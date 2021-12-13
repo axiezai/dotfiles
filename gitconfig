@@ -3,7 +3,7 @@
 	name = Xihe Xie
 [core]
 	editor = vim
-	excludesfile = /Users/xxie/.gitignore_global
+	excludesfile = /Users/xihe/.gitignore_global
 [alias]
 	graph = log --all --graph --decorate --oneline --pretty
 [init]

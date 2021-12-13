@@ -1,3 +1,4 @@
+# Project specific ignores
 .vscode
 .DS_Store
 .datalad
@@ -46,5 +47,4 @@ __pycache__/
 
 # Sphinx documentation
 docs/_build/
-
 
