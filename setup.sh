@@ -3,7 +3,7 @@
 # variables:
 dir=~/dotfiles # dot files directory
 olddir=~/dotfiles_old # backup dot files directory
-files="zshrc bash_aliases bash_profile tmux.conf vimrc vim fzf.bash fzf.zsh" # list of symlinks
+files="zshrc bash_aliases bash_profile tmux.conf vimrc vim fzf.bash fzf.zsh macos" # list of symlinks
 
 # create backup
 echo "Creating $olddir for backup of existing dotfiles in ~"
@@ -29,3 +29,7 @@ for file in $files; do
 		ln -s $dir/$file ~/.$file
 	fi
 done
+
+# MacOS Defaults:
+echo "Loading MacOS settings"
+source ~/.macos
