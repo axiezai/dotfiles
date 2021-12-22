@@ -3,7 +3,7 @@
 # variables:
 dir=~/dotfiles # dot files directory
 olddir=~/dotfiles_old # backup dot files directory
-files="zshrc bash_aliases bash_profile tmux.conf vimrc vim gitconfig gitignore_global fzf.bash fzf.zsh" # list of symlinks
+files="zshrc bash_aliases bash_profile tmux.conf vimrc vim fzf.bash fzf.zsh" # list of symlinks
 
 # create backup
 echo "Creating $olddir for backup of existing dotfiles in ~"
@@ -15,10 +15,17 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move nay existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+# SymLinks for git files:
+ln -sn $dir/git/gitconfig ~/.gitconfig
+ln -sn $dir/git/gitignore_global ~/.gitignore_global
+
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
 	echo "moving any existing dot files from ~ to $olddir"
-	mv ~/.$file ~/dotfiles_old/
-	echo "Creating symlink to $file in home directory."
-	ln -s $dir/$file ~/.$file
+	if [ -e "$file" ]; then
+		echo "found $file, creating backup"
+		mv ~/.$file ~/dotfiles_old/
+		echo "Creating symlink to $file in home directory."
+		ln -s $dir/$file ~/.$file
+	fi
 done
