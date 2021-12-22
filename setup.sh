@@ -25,9 +25,9 @@ for file in $files; do
 	if [ -e "$file" ]; then
 		echo "found $file, creating backup"
 		mv ~/.$file ~/dotfiles_old/
-		echo "Creating symlink to $file in home directory."
-		ln -s $dir/$file ~/.$file
 	fi
+	echo "Creating symlink to $file in home directory."
+	ln -s $dir/$file ~/.$file
 done
 
 # MacOS Defaults:
