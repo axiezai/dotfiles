@@ -4,7 +4,7 @@
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew install git thefuck tmux reattach-to-user-namespace fzf rbenv ripgrep
+brew install git thefuck tmux reattach-to-user-namespace fzf rbenv ripgrep ruby
 
 $(brew --prefix)/opt/fzf/install
 

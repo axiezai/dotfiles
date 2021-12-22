@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/xihe/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -110,10 +110,6 @@ alias df="df -h"
 # thefuck Setup
 eval $(thefuck --alias)
 
-# ruby
-eval "$(rbenv init -)"
-export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
-
 # extend vim-mode to zsh
 bindkey -v
 
@@ -145,3 +141,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # visual studio code command
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+# homebrew ruby installation:
+eval "$(rbenv init -)"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
