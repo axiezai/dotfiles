@@ -143,5 +143,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # homebrew ruby installation:
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
