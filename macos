@@ -54,8 +54,10 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryCli
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -float 2.2
-defaults write NSGlobalDomain InitialKeyRepeat -int 12
+# These rates are beyond the system preferences minimum
+# Test these out at mac-os-key-repeat.vercel.app
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 17
 
 ###############################################################################
 # Finder                                                                      #
