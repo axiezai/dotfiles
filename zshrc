@@ -107,6 +107,9 @@ alias mv="mv -i"
 alias mkdir="mkdir -p"
 alias df="df -h"
 
+# obsidian (temporary until core feature)
+alias obsidian="open -a obsidian"
+
 # thefuck Setup
 eval $(thefuck --alias)
 
