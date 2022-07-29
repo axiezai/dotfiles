@@ -6,7 +6,7 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew install git thefuck tmux reattach-to-user-namespace fzf rbenv ripgrep tree
+brew install git thefuck tmux reattach-to-user-namespace fzf rbenv ripgrep tree xclip tldr
 
 # rbenv setup:
 rbenv init
