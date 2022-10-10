@@ -110,10 +110,6 @@ alias df="df -h"
 # obsidian (temporary until core feature)
 alias obsidian="open -a obsidian"
 
-# xclips copy paste:
-alias c="xclip"
-alias v="xclip -o"
-
 # thefuck Setup
 eval $(thefuck --alias)
 
