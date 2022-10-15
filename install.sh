@@ -19,7 +19,7 @@ $(brew --prefix)/opt/fzf/install
 
 # For agnoster zsh theme
 echo "Installing fonts for agnoster zsh theme"
-git clone https://github.com/powerline/fonts
+git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
 ./install.sh
 cd ..
