@@ -99,8 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Save typing:
 alias v="vim"
-alias zl="echo "https://weillcornell.zoom.us/my/axiezai" | pbcopy"
-alias bfg="java -jar bfg-1.14.0.jar"
+alias zl="echo "https://thetradedesk.zoom.us/my/xihexie" | pbcopy"
 
 # Overwrite for better defautls:
 alias mv="mv -i"
