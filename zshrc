@@ -147,3 +147,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# AWS/SAML2AWS Configuration
+export AWS_PROFILE=saml
