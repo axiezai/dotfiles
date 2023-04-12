@@ -149,3 +149,6 @@ unset __conda_setup
 
 # AWS/SAML2AWS Configuration
 export AWS_PROFILE=saml
+
+# JDK8 Path
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre
