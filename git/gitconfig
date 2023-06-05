@@ -8,3 +8,5 @@
 	graph = log --all --graph --decorate --oneline --pretty
 [init]
 	defaultBranch = main
+[include]
+	path = ~/ttd-dev/git-utils/gitconfig
