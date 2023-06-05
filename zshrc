@@ -154,4 +154,4 @@ export AWS_PROFILE=saml
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre
 
 # TTD git-utils alias
-export PATH=\$PATH:~/ttd-dev/git-utils/alias-bin
+export PATH="/Users/xi-he.xie/ttd-dev/git-utils/alias-bin:$PATH"
