@@ -150,11 +150,5 @@ unset __conda_setup
 # AWS/SAML2AWS Configuration
 export AWS_PROFILE=saml
 
-# TTD git-utils alias
-export PATH="/Users/xi-he.xie/ttd-dev/git-utils/alias-bin:$PATH"
-
-# PS1 starship
-eval "$(starship init zsh)"
-
 # Coursier JVM
 export JAVA_HOME="/Users/xi-he.xie/Library/Caches/Coursier/arc/https/cdn.azul.com/zulu/bin/zulu8.70.0.23-ca-jre8.0.372-macosx_aarch64.tar.gz/zulu8.70.0.23-ca-jre8.0.372-macosx_aarch64"
