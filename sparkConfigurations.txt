@@ -1,0 +1,18 @@
+spark.serializer org.apache.spark.serializer.KryoSerializer
+spark.sql.files.ignoreCorruptFiles false
+spark.databricks.adaptive.autoOptimizeShuffle.enabled true
+spark.databricks.io.cache.enabled true
+spark.kryo.unsafe true
+spark.hadoop.fs.s3a.acl.default BucketOwnerFullControl
+spark.sql.adaptive.enabled true
+spark.sql.adaptive.skewJoin.skewedPartitionFactor 4
+spark.default.parallelism 2520
+spark.sql.shuffle.partitions 1260
+executor.extraJavaOptions -XX:UseG1GC XX:InitiatingHeapOccupancyPercent=35 -XX:+UseParallelGC -XX:ConcGCThread=16
+fs.s3a.acl.default BucketOwnerFullControl
+driver.extraJavaOptions -Dlog4j2.formatMsgNoLookups=true
+com.amazonaws.sdk.retryMode adaptive
+com.amazonaws.sdk.maxAttempts 10
+
+Environment variables:
+SPARK_NICENESS=0
