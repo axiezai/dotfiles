@@ -148,7 +148,8 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # AWS/SAML2AWS Configuration
-export AWS_PROFILE=saml
+#export AWS_PROFILE=saml
+export AWS_PROFILE=production-account
 
 # Coursier JVM
 export JAVA_HOME="/Users/xi-he.xie/Library/Caches/Coursier/arc/https/cdn.azul.com/zulu/bin/zulu8.70.0.23-ca-jre8.0.372-macosx_aarch64.tar.gz/zulu8.70.0.23-ca-jre8.0.372-macosx_aarch64"
