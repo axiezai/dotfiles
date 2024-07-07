@@ -28,3 +28,8 @@ cd fonts
 cd ..
 rm -rf fonts
 echo "Deleting fonts repo after installation"
+
+# Rust
+echo "Install rust"
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
