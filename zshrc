@@ -158,3 +158,6 @@ export JAVA_HOME="/Users/xi-he.xie/Library/Caches/Coursier/arc/https/cdn.azul.co
 if [ -f ~/dotfiles/.my_env_vars ]; then
     source ~/dotfiles/.my_env_vars
 fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
