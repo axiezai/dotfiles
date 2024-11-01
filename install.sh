@@ -18,7 +18,9 @@ rbenv init
 $(brew --prefix)/opt/fzf/install
 
 # JVM manager Coursier
-curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > cs
+# use brew for might be better?
+brew install coursier/formulas/coursier
+cs setup
 
 # For agnoster zsh theme
 echo "Installing fonts for agnoster zsh theme"
