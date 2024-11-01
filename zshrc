@@ -68,7 +68,7 @@ ZSH_THEME_RANDOM_CANDIDATES=( "amuse" "agnoster" )
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode python docker tmux gitignore zsh-autosuggestions)
+plugins=(git vscode python docker tmux gitignore)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,6 +111,9 @@ alias obsidian="open -a obsidian"
 
 # thefuck Setup
 eval $(thefuck --alias)
+
+# zsh-autosuggestions from brew
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # extend vim-mode to zsh
 bindkey -v
