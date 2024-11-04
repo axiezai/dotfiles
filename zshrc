@@ -152,10 +152,13 @@ unset __conda_setup
 
 # AWS/SAML2AWS Configuration
 #export AWS_PROFILE=saml
-export AWS_PROFILE=production-account
+#export AWS_PROFILE=production-account
 
 # Coursier JVM
 export PATH="$PATH:/Users/xi-he.xie/Library/Application Support/Coursier/bin"
+
+# dotnet tools
+export PATH="$PATH:/Users/xi-he.xie/.dotnet/tools"
 
 # Load env vars if exists
 if [ -f ~/dotfiles/.my_env_vars ]; then
@@ -164,3 +167,51 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# BEGIN_AWS_SSO_CLI
+
+# AWS SSO requires `bashcompinit` which needs to be enabled once and
+# only once in your shell.  Hence we do not include the two lines:
+#
+# autoload -Uz +X compinit && compinit
+# autoload -Uz +X bashcompinit && bashcompinit
+#
+# If you do not already have these lines, you must COPY the lines 
+# above, place it OUTSIDE of the BEGIN/END_AWS_SSO_CLI markers
+# and of course uncomment it
+
+__aws_sso_profile_complete() {
+     local _args=${AWS_SSO_HELPER_ARGS:- -L error}
+    _multi_parts : "($(/opt/homebrew/bin/aws-sso ${=_args} list --csv Profile))"
+}
+
+aws-sso-profile() {
+    local _args=${AWS_SSO_HELPER_ARGS:- -L error}
+    if [ -n "$AWS_PROFILE" ]; then
+        echo "Unable to assume a role while AWS_PROFILE is set"
+        return 1
+    fi
+
+    if [ -z "$1" ]; then
+        echo "Usage: aws-sso-profile <profile>"
+        return 1
+    fi
+
+    eval $(/opt/homebrew/bin/aws-sso ${=_args} eval -p "$1")
+    if [ "$AWS_SSO_PROFILE" != "$1" ]; then
+        return 1
+    fi
+}
+
+aws-sso-clear() {
+    local _args=${AWS_SSO_HELPER_ARGS:- -L error}
+    if [ -z "$AWS_SSO_PROFILE" ]; then
+        echo "AWS_SSO_PROFILE is not set"
+        return 1
+    fi
+    eval $(/opt/homebrew/bin/aws-sso ${=_args} eval -c)
+}
+
+compdef __aws_sso_profile_complete aws-sso-profile
+complete -C /opt/homebrew/bin/aws-sso aws-sso
+
+# END_AWS_SSO_CLI
