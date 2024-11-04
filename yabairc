@@ -1,2 +1,62 @@
+#!/usr/bin/env sh
+
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
+
+# configs
+yabai -m config layout bsp
+yabai -m config top_padding    8
+yabai -m config bottom_padding 8
+yabai -m config left_padding   8
+yabai -m config right_padding  8
+yabai -m config window_gap     8
+yabai -m config auto_balance off
+yabai -m config window_shadow off
+
+
+#
+# Space Set-Up
+#
+# Destroy extra space
+for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 6)'); do
+    yabai -m space --destroy 7
+done
+
+# function to create spaces
+function setup_space {
+    local idx="$1"
+    local name="$2"
+    local space=
+    echo "setup space $idx : $name"
+
+    space=$(yabai -m query --spaces --space "$idx")
+    if [ -z "$space" ]; then
+        yabai -m space --create
+    fi
+
+    yabai -m space $"idx" --label "$name"
+}
+
+setup_space 1 tmux
+setup_space 2 social
+setup_space 3 code
+setup_space 4 web
+setup_space 5 media
+setup_space 6 other
+
+# IF 3 displays, move social and web to vertical display 
+displays=$(yabai -m query --displays | jq '.[].id' | sort -un | tail -1)
+if [ displays -eq 3 ]; then
+    yabai -m space 2 --display 2
+    yabai -m space 4 --display 2
+fi
+
+# media is always laptop display
+yabai -m space 5 --display 1
+
+# move some apps automatically to specific spaces
+yabai -m rule --add app="^iTerm2$" space=^1
+yabai -m rule --add app="^Slack$" space=2
+yabai -m rule --add app="^Vivaldi$" space=^4
+yabai -m rule --add app="^Microsoft Outlook$" space=2
+
