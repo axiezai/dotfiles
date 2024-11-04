@@ -22,6 +22,9 @@ $(brew --prefix)/opt/fzf/install
 brew install coursier/formulas/coursier
 cs setup
 
+#
+# Fonts
+#
 # For agnoster zsh theme
 echo "Installing fonts for agnoster zsh theme"
 git clone https://github.com/powerline/fonts.git --depth=1
@@ -30,6 +33,9 @@ cd fonts
 cd ..
 rm -rf fonts
 echo "Deleting fonts repo after installation"
+
+# hack nerd fonts
+brew install --cask font-hack-nerd-font
 
 # Rust
 echo "Install rust"
