@@ -1,5 +1,7 @@
 # Prevent skhd from monitoring events for listed processes
 .blacklist [
+    # "code"
+    "iTerm2"
 ]
 
 # restart yabai + start/stop
