@@ -1,10 +1,38 @@
-
-
 # Prevent skhd from monitoring events for listed processes
 .blacklist [
-    "iTerm2",
-    "Vivaldi"
 ]
 
-# restart yabai
-ctrl + alt + shift - r : yabai --restart-service
+# restart yabai + start/stop
+ctrl + alt - r : yabai --restart-service
+ctrl + alt - s : yabai --start-service
+ctrl + alt - q : yabai --stop-service
+
+# window actions
+# change focus within space
+# hjkl vim style
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# toggle full screen
+alt - m : yabai -m window --toggle zoom-fullscreen
+
+# layouts
+# rotate layout clockwise
+alt + shift - r : yabai -m space --rotate 270
+# flip along y or x axis
+alt + shift - y : yabai -m space --mirror y-axis
+alt + shift - x : yabai -m space --mirror x-axis
+
+# displays
+# move window across displays
+ctrl + alt + shift - w : yabai -m window --display west; yabai -m display --focus west;
+ctrl + alt + shift - e : yabai -m window --display east; yabai -m display --focus east;
+
+# spaces
+# move window to prev/next space, W[A]S[D] 
+alt + shift - a : yabai -m window --space prev;
+alt + shift - d : yabai -m window --space next;
+
+# move window to space # 
