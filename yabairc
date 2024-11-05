@@ -15,6 +15,10 @@ yabai -m config window_shadow off
 # new window spawns to right if vertical split, bottom if horizontal split
 yabai -m config window_placement second_child
 
+# FLASH FOCUSED WINDOW
+yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.1 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
+
+
 # center mouse on window with focus
 yabai -m mouse_follows_focus on
 # when window is dropped in center of another window, swap them
