@@ -37,6 +37,10 @@ echo "Deleting fonts repo after installation"
 # hack nerd fonts
 brew install --cask font-hack-nerd-font
 
+#
+# tiling, hotkeys, status bar
+# yabai, skhd, sketchbar
+
 # Rust
 echo "Install rust"
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh

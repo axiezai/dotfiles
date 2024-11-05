@@ -12,7 +12,18 @@ yabai -m config right_padding  8
 yabai -m config window_gap     8
 yabai -m config auto_balance off
 yabai -m config window_shadow off
+# new window spawns to right if vertical split, bottom if horizontal split
+yabai -m config window_placement second_child
 
+# center mouse on window with focus
+yabai -m mouse_follows_focus on
+# when window is dropped in center of another window, swap them
+# on edges => split
+yabai -m mouse_drop_action swap
+
+# disable for a few apps and let them float
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
 
 #
 # Space Set-Up
@@ -57,6 +68,6 @@ yabai -m space 5 --display 1
 # move some apps automatically to specific spaces
 yabai -m rule --add app="^iTerm2$" space=^1
 yabai -m rule --add app="^Slack$" space=2
-yabai -m rule --add app="^Vivaldi$" space=^4
+yabai -m rule --add app="^Vivaldi$" space=4
 yabai -m rule --add app="^Microsoft Outlook$" space=2
 

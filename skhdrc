@@ -1,0 +1,10 @@
+
+
+# Prevent skhd from monitoring events for listed processes
+.blacklist [
+    "iTerm2",
+    "Vivaldi"
+]
+
+# restart yabai
+ctrl + alt + shift - r : yabai --restart-service
