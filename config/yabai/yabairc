@@ -1,0 +1,63 @@
+#!/usr/bin/env sh
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# more signals and triggers
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=display_added action="sleep 2 && $HOME/.config/yabai/create_spaces.sh"
+yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yabai/create_spaces.sh"
+
+#
+# CONFIGS
+# 
+# Make padding for sketchy bar
+# When window is dropped in center of another window, swap them, if dropped on edge, split them
+# New window spawns to right if vertical split, bottom if horizontal split
+# Window visuals - slightly transparent and shadows when not focused
+# BORDERS SETTINGS
+#
+yabai -m config external_bar                all:30:0        \
+                window_border               on              \
+                mouse_follows_focus         on              \
+                focus_follows_mouse         off             \
+                mouse_drop_action           swap            \
+                window_zoom_persist         off             \
+                window_placement            second_child    \
+                window_topmost              off             \
+                window_shadow               float           \
+                window_opacity              on              \
+                active_window_opacity       1.0             \
+                normal_window_opacity       0.95            \
+                window_opacity_duration     0.15            \
+                window_border_width         2               \
+                window_border_hidpi         off             \
+                window_border_radius        11              \
+                window_animation_duration   0.22            \
+                active_window_border_color  0xffe1e3e4      \
+                normal_window_border_color  0xff2a2f38      \
+                insert_feedback_color       0xff9dd274      \
+                split_ratio                 0.50            \
+                auto_balance                off             \
+                                                            \
+                top_padding                 10              \
+                bottom_padding              10              \
+                left_padding                10              \
+                right_padding               10              \
+                window_gap                  8
+
+# FLASH FOCUSED WINDOW
+# yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.1 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
+
+# disable for a few apps and let them float
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+
+yabai -m config layout bsp
+
+echo "yabai configurations loaded..."
