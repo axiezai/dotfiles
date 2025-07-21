@@ -10,3 +10,5 @@
 	defaultBranch = main
 [include]
 	path = ~/ttd-dev/git-utils/gitconfig
+[includeIf "gitdir:~/ttd-dev/"]
+    path = .gitconfig-work
