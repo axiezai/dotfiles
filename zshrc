@@ -223,3 +223,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export CS_FORMER_JAVA_HOME="$JAVA_HOME"
+export JAVA_HOME="/Users/xi-he.xie/Library/Caches/Coursier/arc/https/corretto.aws/downloads/resources/17.0.15.6.1/amazon-corretto-17.0.15.6.1-macosx-aarch64.tar.gz/amazon-corretto-17.jdk/Contents/Home"
