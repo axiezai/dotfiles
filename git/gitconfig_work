@@ -1,0 +1,12 @@
+[user]
+        email = xi-he.xie@thetradedesk.com
+        name = Xi-He Xie
+[core]
+        editor = vim
+        excludesfile = ~/.gitignore_global
+[alias]
+        graph = log --all --graph --decorate --oneline --pretty
+[init]
+        defaultBranch = main
+[include]
+        path = ~/ttd-dev/git-utils/gitconfig
